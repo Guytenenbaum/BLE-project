@@ -112,7 +112,7 @@ def main():
 
         last_ts_for_current_tag = ts
 
-        # --- Stability confirmation window ---
+        #  Stability confirmation window 
         if buffer_loc is None or pred_loc != buffer_loc:
             buffer_loc = pred_loc
             buffer_count = 1
