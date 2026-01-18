@@ -148,7 +148,7 @@ def main():
     n_reads = conn.execute("SELECT COUNT(*) FROM raw_reads;").fetchone()[0]
     n_locs = conn.execute("SELECT COUNT(DISTINCT true_loc) FROM scans WHERE true_loc IS NOT NULL;").fetchone()[0]
 
-    print("Loaded successfully ✅")
+    print("Loaded successfully ")
     print(f"DB: {db_path}")
     print(f"scans: {n_scans}")
     print(f"raw_reads: {n_reads} (expected scans*13 = {n_scans*13})")
