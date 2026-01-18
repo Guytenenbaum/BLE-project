@@ -13,9 +13,8 @@ from sklearn.neighbors import KNeighborsClassifier
 from sklearn.metrics import accuracy_score, f1_score
 
 
-# -----------------------------
+
 # Grid distance (for "loss")
-# -----------------------------
 def loc_to_xy(loc: str) -> Optional[Tuple[int, int]]:
     if loc is None:
         return None
@@ -62,9 +61,8 @@ def within_k_steps(y_true: np.ndarray, y_pred: np.ndarray, k: int) -> float:
     return (ok / tot) if tot else float("nan")
 
 
-# -----------------------------
+
 # Features
-# -----------------------------
 def load_wide_features(conn: sqlite3.Connection) -> pd.DataFrame:
     """
     Build wide features for ALL scans (labeled + unlabeled).
@@ -137,9 +135,8 @@ def parse_int_grid(s: str) -> List[int]:
     return vals
 
 
-# -----------------------------
+
 # Merge sparse labels
-# -----------------------------
 def build_sparse_merge_map(labels: np.ndarray, min_count: int) -> Dict[str, str]:
     """
     Build mapping from sparse labels -> nearest dense label (by Manhattan distance on grid).
